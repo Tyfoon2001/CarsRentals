@@ -1,0 +1,62 @@
+﻿@page
+@model CarRentalSystem.Pages.CustomerPages.IndexModel
+@if (TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>
+}
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Customer List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/CustomerPages/Create" class="btn btn-primary">
+
+                Create new customer
+            </a>
+
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    CustomerId
+                </th>
+                <th>
+                    Customer Name
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.customers)
+            {
+                <tr>
+                    <td>
+                        @obj.customerId
+                    </td>
+                    <td>
+                        @obj.name
+                    </td>
+                    
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="/CustomerPages/Edit" asp-route-CustomerId="@obj.customerId" class="btn btn-primary mx-2">
+                                Edit
+                            </a>
+
+                            <a asp-page="/CustomerPages/Delete" asp-route-CustomerId="@obj.customerId" class="btn btn-danger mx-2">
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

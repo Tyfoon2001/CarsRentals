@@ -1,0 +1,44 @@
+﻿@page
+@model CarRentalSystem.Pages.CarsPages.DeleteModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category </h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label>CarId</label>
+            <input asp-for="cars.CarId" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label>Brand</label>
+            <input asp-for="cars.Brand" disabled class="form-control" />
+
+
+        </div>
+        <div class="mb-3">
+            <label>Model</label>
+            <input asp-for="cars.Model" disabled class="form-control" />
+
+
+        </div>
+        <div class="mb-3">
+            <label>Price</label>
+            <input asp-for="cars.Price" disabled class="form-control" />
+
+
+        </div>
+        <div class="mb-3">
+            <label>IsAvailable</label>
+            <input asp-for="cars.IsAvailable" disabled class="form-control" />
+
+
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-page="/CarsPages/Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+
+    </div>
+</form>
+
